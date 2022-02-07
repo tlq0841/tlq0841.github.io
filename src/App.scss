@@ -1,0 +1,79 @@
+.general-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 1500px;
+  height: 100%;
+  margin: 15px auto;
+  justify-content: center;
+  border: 1px solid black;
+  padding: 15px;
+
+  .top_bar {
+    display: flex;
+    flex: 1;
+    height: 200px;
+    align-items: center;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    align-items: center;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+
+    :first-child {
+      font-size: 20px;
+    }
+  }
+
+  .contest_content {
+    margin-top: 50px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    table {
+      width: 450px;
+      border-collapse: collapse;
+      font-weight: bold;
+      font-size: 12px;
+
+      td {
+        border: 1px solid black;
+        padding: 5px;
+      }
+    }
+  }
+
+  .react-table {
+    margin-top: 20px;
+    border-spacing: 0;
+    border: 1px solid black;
+    th,
+    td {
+      margin: 0;
+      padding: 0 5px;
+      border-bottom: 1px solid black;
+      border-right: 1px solid black;
+
+      :last-child {
+        border-right: 0;
+      }
+
+      textarea {
+        width: 100%;
+        border: none;
+        outline: none;
+      }
+    }
+    th {
+      textarea {
+        color: #de5246;
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+  }
+}
