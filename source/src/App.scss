@@ -35,7 +35,7 @@
     justify-content: space-between;
 
     table {
-      width: 450px;
+      width: 550px;
       border-collapse: collapse;
       font-weight: bold;
       font-size: 12px;
@@ -43,7 +43,11 @@
       td {
         border: 1px solid black;
         padding: 5px;
-        
+
+        input {
+          border: none;
+          outline: none;
+        }
       }
     }
   }
@@ -54,11 +58,15 @@
     border: 1px solid black;
     th,
     td {
+      line-height: normal;
       margin: 0;
       padding: 0 5px;
       border-bottom: 1px solid black;
       border-right: 1px solid black;
       text-align: center;
+      // font-size: 11px;
+      // font-weight: bold;
+      // font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
       :last-child {
         border-right: 0;
@@ -71,16 +79,71 @@
       }
 
       input {
-        width:80px;
-        border:none;
+        width: 80px;
+        border: none;
         outline: none;
       }
     }
     th {
+      font-size: 11px;
+      font-weight: bold;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
       textarea {
         color: #de5246;
         font-weight: bold;
         text-align: center;
+      }
+    }
+  }
+
+  .signatures {
+    display: flex;
+    margin: 10px 0;
+    width: 100%;
+    justify-content: space-between;
+
+    table {
+      width: 450px;
+      border-collapse: collapse;
+      font-weight: bold;
+      font-size: 12px;
+
+      td {
+        border: 1px solid black;
+        padding: 5px;
+
+        input {
+          border: none;
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    display: flex;
+    margin: 10px 0;
+    width: 100%;
+    justify-content: space-between;
+    border: 1px solid black;
+    align-items: center;
+    padding: 5px 10px;
+    box-sizing: border-box;
+
+    span {
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      span {
+        font-weight: normal;
+
+        font-size: 9px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
     }
   }

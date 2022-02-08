@@ -95,11 +95,15 @@ function App() {
                 YARIŞMANIN
               </td>
               <td style={{ width: "120px" }}>KATEGORİ</td>
-              <td></td>
+              <td>
+                <input type="text" />
+              </td>
             </tr>
             <tr>
               <td style={{ width: "120px" }}>BASAMAĞI</td>
-              <td></td>
+              <td>
+                <input type="text" />
+              </td>
             </tr>
           </table>
         </div>
@@ -107,13 +111,19 @@ function App() {
         <div className="for_date">
           <table>
             <tr>
-              <td style={{ width: "120px" }}> DALI</td>{" "}
-              <td colSpan={2} style={{ width: "120px" }}></td>
+              <td style={{ width: "120px" }}> DALI</td>
+              <td colSpan={2} style={{ width: "120px" }}>
+                <input type="text" />
+              </td>
             </tr>
             <tr>
-              <td style={{ width: "120px" }}>YERİ VE TARİHİ</td>
-              <td></td>
-              <td style={{ width: "100px" }}>....../...../20</td>
+              <td style={{ width: "150px" }}>YERİ VE TARİHİ</td>
+              <td>
+                <input type="text" />
+              </td>
+              <td style={{ width: "100px" }}>
+                <input type="text" placeholder="....../...../20" />
+              </td>
             </tr>
           </table>
         </div>
@@ -121,26 +131,26 @@ function App() {
       <Table className="react-table" stickyHeader aria-label="sticky table">
         <TableHead>
           <TableRow>
-            <TableCell align="center" rowSpan={3}>
+            <TableCell className="header" align="center" rowSpan={3}>
               Sıra No.
             </TableCell>
-            <TableCell align="center" rowSpan={3}>
-              Oyun Topluluğunun Adı
+            <TableCell className="header" align="center" rowSpan={3}>
+              OYUN TOPLULUĞUNUN ADI
             </TableCell>
-            <TableCell align="center" rowSpan={3}>
-              Oyun Töre
+            <TableCell className="header" align="center" rowSpan={3}>
+              OYUN YÖRESİ
             </TableCell>
-            <TableCell align="center" rowSpan={3}>
-              İntro Süresi
+            <TableCell className="header" align="center" rowSpan={3}>
+              İNTRO SÜRESİ
             </TableCell>
-            <TableCell align="center" rowSpan={3}>
-              Oyun süresi
+            <TableCell className="header" align="center" rowSpan={3}>
+              OYUN SÜRESİ
             </TableCell>
-            <TableCell align="center" colSpan={9} rowSpan={1}>
-              Değerlendirme Hakemleri
+            <TableCell className="header" align="center" colSpan={9} rowSpan={1}>
+              DEĞERLENDİRME HAKEMLERİ (Adı - Soyadı)
             </TableCell>
-            <TableCell align="center" colSpan={4}>
-              Yarışma Sonuçları
+            <TableCell className="header" align="center" colSpan={4}>
+              YARIŞMA SONUÇLARI
             </TableCell>
           </TableRow>
           <TableRow>
@@ -149,9 +159,9 @@ function App() {
                 <textarea rows={2} cols={8} />
               </TableCell>
             ))}
-            <TableCell rowSpan={2}>Toplam Puan</TableCell>
-            <TableCell rowSpan={2}>Ortalama Puanı</TableCell>
-            <TableCell colSpan={2}>Derecesi</TableCell>
+            <TableCell rowSpan={2}>TOPLAM PUANI</TableCell>
+            <TableCell rowSpan={2}>ORTALAMA PUANI</TableCell>
+            <TableCell colSpan={2}>DERECESI</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Rakamla</TableCell>
@@ -231,6 +241,49 @@ function App() {
           ))}
         </TableBody>
       </Table>
+
+      <div className="signatures">
+        <table>
+          <tr>
+            <td> YAZI HAKAMİNİN </td> <td>İMZASI</td>
+          </tr>
+          <tr>
+            <td> Adı : </td>
+            <td rowSpan={2}></td>
+          </tr>
+          <tr>
+            <td> Soyadı : </td>
+          </tr>
+        </table>
+
+        <table>
+          <tr>
+            <td> İL HAKEM TEMSİLCİSİ </td> <td>İMZASI</td>
+          </tr>
+          <tr>
+            <td> Adı : </td>
+            <td rowSpan={2}></td>
+          </tr>
+          <tr>
+            <td> Soyadı : </td>
+          </tr>
+        </table>
+      </div>
+
+      <div className="copyright">
+        <span>THOF2019 YST-R1</span>
+        <div>
+          <span>
+            Kültür Mahallesi Mithatpaşa Cad. No:47/1 06420 Çankaya/Ankara,
+            Türkiye
+          </span>
+          <span>
+            Tel : +90-312.310 65 64 Fax : +90-312.309 50 30 Gsm:+90 (530) 607 73
+            73
+          </span>
+          <span>Web : www.thof.gov.tr Eposta: info@thof.gov.tr</span>
+        </div>
+      </div>
     </div>
   );
 }

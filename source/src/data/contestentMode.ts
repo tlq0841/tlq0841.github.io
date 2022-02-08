@@ -79,6 +79,94 @@ export const inititazeModel: evaluateModel[] = [
     intoDuration: 0,
     gameDuration: 0,
     judges: [0]
+  },
+  {
+    order: 10,
+    communityName: "",
+    gamePlace: "",
+    intoDuration: 0,
+    gameDuration: 0,
+    judges: [0]
+  },
+  {
+    order: 11,
+    communityName: "",
+    gamePlace: "",
+    intoDuration: 0,
+    gameDuration: 0,
+    judges: [0]
+  },
+  {
+    order: 12,
+    communityName: "",
+    gamePlace: "",
+    intoDuration: 0,
+    gameDuration: 0,
+    judges: [0]
+  },
+  {
+    order: 13,
+    communityName: "",
+    gamePlace: "",
+    intoDuration: 0,
+    gameDuration: 0,
+    judges: [0]
+  },
+  {
+    order: 14,
+    communityName: "",
+    gamePlace: "",
+    intoDuration: 0,
+    gameDuration: 0,
+    judges: [0]
+  },
+  {
+    order: 15,
+    communityName: "",
+    gamePlace: "",
+    intoDuration: 0,
+    gameDuration: 0,
+    judges: [0]
+  },
+  {
+    order: 16,
+    communityName: "",
+    gamePlace: "",
+    intoDuration: 0,
+    gameDuration: 0,
+    judges: [0]
+  },
+  {
+    order: 17,
+    communityName: "",
+    gamePlace: "",
+    intoDuration: 0,
+    gameDuration: 0,
+    judges: [0]
+  },
+  {
+    order: 18,
+    communityName: "",
+    gamePlace: "",
+    intoDuration: 0,
+    gameDuration: 0,
+    judges: [0]
+  },
+  {
+    order: 19,
+    communityName: "",
+    gamePlace: "",
+    intoDuration: 0,
+    gameDuration: 0,
+    judges: [0]
+  },
+  {
+    order: 20,
+    communityName: "",
+    gamePlace: "",
+    intoDuration: 0,
+    gameDuration: 0,
+    judges: [0]
   }
 ];
 
