@@ -81,3 +81,26 @@ export const inititazeModel: evaluateModel[] = [
     judges: [0]
   }
 ];
+
+export const number2Letter = {
+  1: "Bir",
+  2: "iki",
+  3: "Üç",
+  4: "Dört",
+  5: "Beş",
+  6: "Altı",
+  7: "Yedi",
+  8: "Sekiz",
+  9: "Dokuz",
+  10: "On",
+  11: "On Bir",
+  12: "On İki",
+  13: "On Üç",
+  14: "On Dört",
+  15: "On Beş",
+  16: "On Altı",
+  17: "On Yedi",
+  18: "On Seki",
+  19: "On Dokuz",
+  20: "Yirmi"
+};

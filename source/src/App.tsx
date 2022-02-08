@@ -6,7 +6,11 @@ import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 
-import { inititazeModel, evaluateModel } from "./data/contestentMode";
+import {
+  inititazeModel,
+  evaluateModel,
+  number2Letter
+} from "./data/contestentMode";
 
 function App() {
   const [contestens, setContestents] =
@@ -14,8 +18,6 @@ function App() {
 
   const onValueChange = (value: string, order: number, accessor: string) => {
     const tempContestent = [...contestens];
-
-    console.log("accessor: ", accessor, "value:", value);
 
     (tempContestent[order] as any)[accessor] = value;
     setContestents(tempContestent);
@@ -33,12 +35,20 @@ function App() {
   };
 
   const calculateGameOffset = (val: number): number => {
-    const offset = val <= 480 ? 480 - val : val >= 600 ? 600 - val : 0;
-    if (offset > 1 && offset < 30) return 0.5;
+    const offset = val <= 480 ? 480 - val : val >= 600 ? val - 600 : 0;
+    if (offset >= 1 && offset <= 30) return 0.5;
     else if (offset > 30 && offset <= 60) return 1;
     else if (offset > 60) return 5;
 
     return 0;
+  };
+
+  const onGameDurationChange = (val: string, key: string, order: number) => {
+    const tempContestent = [...contestens];
+    const parseMinutes = val.split(":");
+    const duration = Number(parseMinutes[0]) * 60 + Number(parseMinutes[1]);
+    (tempContestent[order] as any)[key] = duration;
+    setContestents(tempContestent);
   };
 
   const getAverage = (mdl: evaluateModel) => {
@@ -47,6 +57,19 @@ function App() {
     let offset = mdl.intoDuration > 30 ? 1 : 0;
     const gameOffset = calculateGameOffset(mdl.gameDuration);
     return (total / averageCount - offset - gameOffset).toFixed(2);
+  };
+
+  const getOrder = (mdl: evaluateModel): number => {
+    let order = 1;
+    const mdlAvg = getAverage(mdl);
+    console.log("model avg: ", mdlAvg);
+    contestens.forEach(contenstent => {
+      const avg = getAverage(contenstent);
+      console.log("other avg: ", avg);
+      if (avg !== "NaN" && Number(avg) > Number(mdlAvg)) order += 1;
+    });
+
+    return order;
   };
   return (
     <div className="general-wrapper">
@@ -70,7 +93,7 @@ function App() {
             <tr>
               <td rowSpan={2} style={{ width: "120px" }}>
                 YARIŞMANIN
-              </td>{" "}
+              </td>
               <td style={{ width: "120px" }}>KATEGORİ</td>
               <td></td>
             </tr>
@@ -105,7 +128,7 @@ function App() {
               Oyun Topluluğunun Adı
             </TableCell>
             <TableCell align="center" rowSpan={3}>
-              Oyun Töresi
+              Oyun Töre
             </TableCell>
             <TableCell align="center" rowSpan={3}>
               İntro Süresi
@@ -154,6 +177,17 @@ function App() {
                   ));
                 } else if (key === "order") {
                   return <TableCell> {value}</TableCell>;
+                } else if (key === "gameDuration" || key === "intoDuration") {
+                  return (
+                    <TableCell>
+                      <input
+                        placeholder="--:--"
+                        onChange={e =>
+                          onGameDurationChange(e.target.value, key, index)
+                        }
+                      />
+                    </TableCell>
+                  );
                 } else
                   return (
                     <TableCell>
@@ -175,8 +209,24 @@ function App() {
               <TableCell>
                 {getAverage(contestent) === "NaN" ? 0 : getAverage(contestent)}
               </TableCell>
-              <TableCell>###</TableCell>
-              <TableCell>###</TableCell>
+              <TableCell>
+                {getAverage(contestent) === "NaN" ? (
+                  "###"
+                ) : getOrder(contestent) < 4 ? (
+                  <b>{getOrder(contestent)}</b>
+                ) : (
+                  getOrder(contestent)
+                )}
+              </TableCell>
+              <TableCell>
+                {getAverage(contestent) === "NaN" ? (
+                  "###"
+                ) : getOrder(contestent) < 4 ? (
+                  <b>{(number2Letter as any)[getOrder(contestent)]}</b>
+                ) : (
+                  (number2Letter as any)[getOrder(contestent)]
+                )}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
