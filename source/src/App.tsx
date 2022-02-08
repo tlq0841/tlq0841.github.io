@@ -146,7 +146,12 @@ function App() {
             <TableCell className="header" align="center" rowSpan={3}>
               OYUN SÜRESİ
             </TableCell>
-            <TableCell className="header" align="center" colSpan={9} rowSpan={1}>
+            <TableCell
+              className="header"
+              align="center"
+              colSpan={9}
+              rowSpan={1}
+            >
               DEĞERLENDİRME HAKEMLERİ (Adı - Soyadı)
             </TableCell>
             <TableCell className="header" align="center" colSpan={4}>
@@ -248,11 +253,17 @@ function App() {
             <td> YAZI HAKAMİNİN </td> <td>İMZASI</td>
           </tr>
           <tr>
-            <td> Adı : </td>
+            <td>
+              Adı :
+              <input type="text" />
+            </td>
             <td rowSpan={2}></td>
           </tr>
           <tr>
-            <td> Soyadı : </td>
+            <td>
+              Soyadı :
+              <input type="text" />
+            </td>
           </tr>
         </table>
 
@@ -261,11 +272,17 @@ function App() {
             <td> İL HAKEM TEMSİLCİSİ </td> <td>İMZASI</td>
           </tr>
           <tr>
-            <td> Adı : </td>
+            <td>
+              Adı :
+              <input type="text" />
+            </td>
             <td rowSpan={2}></td>
           </tr>
           <tr>
-            <td> Soyadı : </td>
+            <td>
+              Soyadı :
+              <input type="text" />
+            </td>
           </tr>
         </table>
       </div>
